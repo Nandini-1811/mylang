@@ -11,7 +11,7 @@ Source files use the `.learn` extension.
 
 ## Quick Example
 
-\```
+```
 note: fibonacci in the language
 define fib(n is num) returns num {
     check (n <= 1) {
@@ -23,7 +23,7 @@ define fib(n is num) returns num {
 
 let result is num = fib(10)
 show(result)
-\```
+```
 
 ## Build Stages
 
@@ -37,19 +37,19 @@ show(result)
 
 ## Build
 
-\```bash
+```bash
 gcc -Wall -Iinclude src/scanner.c src/main.c -o lang
-\```
+```
 
 ## Run
 
-\```bash
+```bash
 lang.exe yourfile.learn
-\```
+```
 
 ## Project Structure
 
-\```
+```
 mylang/
 ├── include/
 │   └── tokens.h       # Token type definitions
@@ -61,7 +61,7 @@ mylang/
 │   ├── test2.learn    # Operators, decimals, loops
 │   └── test3.learn    # Comments
 └── README.md
-\```
+```
 
 ## Author
 
