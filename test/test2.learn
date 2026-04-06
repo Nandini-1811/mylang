@@ -1,0 +1,10 @@
+let price is decimal = 99.99
+let flag is bool = true
+check (price >= 50.0) {
+    show("expensive")
+} otherwise {
+    show("cheap")
+}
+repeat (let i is num = 0 ; i < 3 ; i++) {
+    show(i)
+}

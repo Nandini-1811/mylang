@@ -1,0 +1,8 @@
+note: this is a comment
+let x is num = 30
+note:another comment
+let y is num = 20
+let result is num = x + y
+note:  should show 50
+show(result)
+

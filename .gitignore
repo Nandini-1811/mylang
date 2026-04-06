@@ -1,0 +1,11 @@
+# compiled binary
+lang.exe
+*.exe
+*.o
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini

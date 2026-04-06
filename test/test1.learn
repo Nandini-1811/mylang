@@ -1,0 +1,8 @@
+note: my first test program
+let x is num = 42
+let name is text = "Aryan"
+define add(a is num, b is num) returns num{
+    give a+b
+}
+let result is num = add(10,20)
+show(result)
