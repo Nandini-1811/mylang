@@ -651,7 +651,7 @@ void print_ast(ASTNode* node, int indent){
 
     switch(node->type){
         case NODE_PROGRAM:
-            printf("Program (%d statements\n",
+            printf("Program (%d statements)\n",
                     node->as.program.count);
             for(int i=0;i<node->as.program.count;i++){
                 print_ast(node->as.program.statements[i],indent+1);
