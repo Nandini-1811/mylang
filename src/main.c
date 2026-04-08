@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include "../include/tokens.h"
+#include "../include/ast.h"
 
 /*forward declerations*/
 typedef struct{
@@ -11,6 +12,7 @@ typedef struct{
 
 void scanner_init(Scanner* s, const char* source);
 Token next_token(Scanner* s);
+ASTNode* parse(Token* tokens, int count);
 
 /* read entire file into a string */
 char* read_file(const char* path){
@@ -36,26 +38,27 @@ int main(int argc, char* argv[]){
         fprintf(stderr,"Usage: lang <file.learn>\n");
         return 1;
     }
+    /* Stage 1 - SCAN */
     char* source = read_file(argv[1]);
     Scanner s;
     scanner_init(&s,source);
-    printf("%-16s %-20s %s\n","TOKEN TYPE","VALUE","LINE:COL");
-    printf("--------------------------------------------------\n");
+    
+    Token* tokens = (Token*)malloc(sizeof(Token) * 4096);
+    int count = 0;
     Token t;
     do{
         t = next_token(&s);
-        /*skip newlines in output - too noisy*/
-        if(t.type == TOKEN_NEWLINE){
-            free(t.value);
-            continue;
-        }
-        printf("%-16s %-20s %d:%d\n",
-            token_type_name(t.type),
-            t.value,t.line,t.column);
-        
-        free(t.value);
+        tokens[count++] = t;
     }while(t.type != TOKEN_EOF);
 
-    free(source);
+    /* Stage 2 : Parse */
+    ASTNode* ast = parse(tokens,count);
+
+    /* PRINT AST */
+    printf("\n=== AST ===\n");
+    print_ast(ast,0);
+
+    free_ast(ast);
+    free(tokens);
     return 0;
 }
