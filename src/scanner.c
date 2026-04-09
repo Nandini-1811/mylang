@@ -5,7 +5,7 @@
 #include"../include/tokens.h"
 
 /*------------------------------
-LANG Scanner 
+HelloWorld Scanner 
 Stage1 - Lexical Analysis 
 Reads a .learn source file character 
 by character and emits a stream of 

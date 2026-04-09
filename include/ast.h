@@ -2,7 +2,7 @@
 #define AST_H
 
 /*-----------------------------------------------
-LANG - Abstart Syntax Tree Defination
+HelloWorld - Abstart Syntax Tree Defination
 Stage 2 : Parser
 Every construct in the language maps 
 to one of those node types.

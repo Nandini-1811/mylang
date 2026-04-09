@@ -3,7 +3,7 @@
 
 
 /*----------------------------------------
-LANG - Token Type Defination
+HelloWorld - Token Type Defination
 STAGE 1 : SCANNER
 All token types the scanner can emit
 -------------------------------------------*/

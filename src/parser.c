@@ -6,7 +6,7 @@
 
 
 /*------------------------------------------
-LANG PARSER 
+HelloWorld PARSER 
 Stage 2 - Syntax Analysis 
 Takes the token stream from the scanner
 and builds an AST.
