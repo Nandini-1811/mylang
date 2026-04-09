@@ -17,9 +17,9 @@ note: fibonacci in HelloWorld
 define fib(n is num) returns num 
 {
     check (n <= 1) {
-    give n
+        give n
     } otherwise {
-    give fib(n - 1) + fib(n - 2)
+        give fib(n - 1) + fib(n - 2)
     }
 }
 let result is num = fib(10)
