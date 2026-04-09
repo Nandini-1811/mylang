@@ -13,6 +13,8 @@ typedef struct{
 void scanner_init(Scanner* s, const char* source);
 Token next_token(Scanner* s);
 ASTNode* parse(Token* tokens, int count);
+int analyze(ASTNode* root);
+
 
 /* read entire file into a string */
 char* read_file(const char* path){
@@ -57,6 +59,14 @@ int main(int argc, char* argv[]){
     /* PRINT AST */
     printf("\n=== AST ===\n");
     print_ast(ast,0);
+
+    /* Stage 3 : Semantic Analysis */
+    int errors = analyze(ast);
+    if(errors){
+        fprintf(stderr,"\nCompilation failed.\n");
+        return 1;
+    }
+    printf("\nNo semantic errors found.\n");
 
     free_ast(ast);
     free(tokens);

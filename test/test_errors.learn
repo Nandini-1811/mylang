@@ -1,0 +1,15 @@
+note: test 1 - duplicate variable
+let x is num = 10
+let x is num = 20
+
+note: test 2 - undeclared variable
+show(z)
+
+note: test 3 - type mismatch
+let price is num = 99.99
+
+note: test 4 - wrong function args
+define add(a is num, b is num) returns num {
+    give a + b
+}
+let result is num = add(10)
