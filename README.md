@@ -14,12 +14,13 @@ Source files use the `.learn` extension.
 
 ```bash
 note: fibonacci in HelloWorld
-define fib(n is num) returns num {
-check (n <= 1) {
-give n
-} otherwise {
-give fib(n - 1) + fib(n - 2)
-}
+define fib(n is num) returns num 
+{
+    check (n <= 1) {
+    give n
+    } otherwise {
+    give fib(n - 1) + fib(n - 2)
+    }
 }
 let result is num = fib(10)
 show(result)
